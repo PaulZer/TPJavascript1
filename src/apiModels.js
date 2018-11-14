@@ -1,0 +1,1 @@
+require('./modules/product/ProductModel');
