@@ -1,1 +1,2 @@
-require('./modules/product/ProductModel');
+require('./modules/animal/AnimalModel');
+require('./modules/animal_category/AnimalCategoryModel');

@@ -6,14 +6,21 @@
     <body>
     <h1>Helo wold</h1>
     <div id="app">
-        <div id="product-list">
-            <article v-for="product in products">
-                <h1>{{ product.name }}</h1>
-                <aside>
-                    Stock : {{ product.stock }}
-                </aside>
-            </article>
+        <div class="container-fluid">
+            <div id="product-list">
+                <div class="card" v-for="product in products">
+                    <div class="card-title">
+                        <h1>{{ product.name }}</h1>
+                    </div>
+                    <div class="card-content">
+                        <aside>
+                            Stock : {{ product.stock }}
+                        </aside>
+                    </div>
+                </div>
+            </div>
         </div>
+
     </div>
         <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
         <script src="js/app.js"></script>

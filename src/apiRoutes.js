@@ -1,7 +1,8 @@
 const express = require('express');
 const router = express.Router();
 
-router.use('/product', require('./modules/ProductRoutes'));
+router.use('/animal', require('./modules/animal/AnimalRoutes'));
+router.use('/category', require('./modules/animal_category/AnimalCategoryRoutes'));
 
 router.route('/')
     .get(function (req, res) {
