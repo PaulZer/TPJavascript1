@@ -12,7 +12,7 @@ animalRouter.route('/')
 
 animalRouter.route('/:animalId')
     .get(PMs.afficherUnAnimal)
-    .post(AuthM.hasValidAuthorizationToken, PMs.mettreAJourUnAnimal)
+    .put(AuthM.hasValidAuthorizationToken, PMs.mettreAJourUnAnimal)
     .delete(AuthM.hasValidAuthorizationToken, PMs.supprimerUnAnimal);
 
 

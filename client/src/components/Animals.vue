@@ -1,7 +1,9 @@
 <template>
     <ul>
         <li v-for="animal in animals" :key="animal._id">
-            {{ animal.name }}
+            <router-link :to="{ name: 'animal', params: { id: animal._id }}">
+                <a>{{ animal.name }}</a>
+            </router-link>
         </li>
     </ul>
 </template>

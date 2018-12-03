@@ -10,10 +10,9 @@
 
 <script>
     /* eslint-disable */
-    import Animals from "./Animals";
     export default {
         name: "Categories",
-        components: {Animals},
+        components: {},
         data: function(){
             return {
                 categories: []

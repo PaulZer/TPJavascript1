@@ -36,6 +36,7 @@ class AnimalMiddlewares {
             name: req.body.name,
             description: req.body.description,
             linkWiki: req.body.linkWiki,
+            categories: req.body.categories,
             preys: req.body.preys,
             predators: req.body.predators,
         });

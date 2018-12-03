@@ -89,6 +89,23 @@ class AnimalCategoryMiddlewares {
             });
         });
     }
+
+    static removeAnimalFromCategory(req, res, next) {
+        console.log("suppr animal");
+        let animalId = req.body.animalId;
+        console.log(animalId);
+        let animal = Animal.find({"_id": animalId}, (err, animals) => {
+            if(err) return next(err);
+            var animal = animals[0];
+            console.log(animal);
+            animal.categories.remove(req.data.category);
+            animal.save((err, animalUpdated) => {
+                if(err){
+                    return next(err);
+                } else res.send(animalUpdated);
+            });
+        });
+    }
 }
 
 module.exports = AnimalCategoryMiddlewares;

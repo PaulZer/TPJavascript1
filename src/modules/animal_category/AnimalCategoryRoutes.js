@@ -11,7 +11,10 @@ animalCategoryRouter.route('/')
     .post(AuthM.hasValidAuthorizationToken, ACMs.createCategory);
 
 animalCategoryRouter.route('/:categoryId/addAnimal')
-    .post(AuthM.hasValidAuthorizationToken, ACMs.addAnimalToCategory);
+    .put(AuthM.hasValidAuthorizationToken, ACMs.addAnimalToCategory);
+
+animalCategoryRouter.route('/:categoryId/removeAnimal')
+    .put(AuthM.hasValidAuthorizationToken, ACMs.removeAnimalFromCategory);
 
 animalCategoryRouter.route('/:categoryId/animals')
     .get(ACMs.getCategoryAnimals)

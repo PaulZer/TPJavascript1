@@ -4,16 +4,29 @@
             <a>Retour à la liste</a>
         </router-link>
         <div>{{ category }}</div>
-        <div>{{ animals }}</div>
+
+        <div v-if="animals.length === 0">
+            Aucun animal dans cette catégorie
+        </div>
+        <div v-else>
+            <ul>
+                <li v-for="animal in animals" :key="animal._id">
+                    <router-link :to="{ name: 'animal', params: { id: animal._id }}">
+                        <a>{{ animal.name }}</a>
+                    </router-link>
+
+                </li>
+            </ul>
+        </div>
+
     </div>
 </template>
 
 <script>
     /* eslint-disable */
-    import Animals from "../../components/Animals";
     export default {
-        name: "Category",
-        components: {Animals},
+        name: "Animals",
+        components: {},
         data: function(){
             return {
                 category: [],
@@ -27,14 +40,11 @@
                 headers: {
                     "Authorization": "tmlp"
                 }
-            }).then(response => {
-                return response.json();
-                // TODO REPARER CA
-            }).then(res => {
-                    console.log(res);
-                    this.animals = res.animals;
-                    this.category = res.category;
-                }).catch(err => console.log(err));
+            }).then(response => response.json())
+            .then(res => {
+                this.animals = res.animals;
+                this.category = res.category;
+            }).catch(err => console.log(err));
         }
     }
 </script>
