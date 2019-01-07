@@ -1,11 +1,21 @@
 <template>
-    <div>
+    <div class="container">
         <router-link :to="{ name: 'category', params: { id: animal.categories } }">
-            <a>Retour à la liste</a>
+            <button class="btn btn-sm btn-danger mt-2 mb-2">Retour à la liste</button>
         </router-link>
-        <h2>{{ animal.name }}</h2>
-        <p>{{ animal.description }}</p>
-        <a v-bind:href="animal.linkWiki">Wiki</a>
+        <div class="row">
+            <div style="float:none;margin:0 auto;">
+                <b-card :title="animal.name"
+                        :img-src="'/animals_sprites/' + animal.image"
+                        img-top
+                        tag="article"
+                        style="max-width: 20rem;"
+                        class="mb-2 mt-2">
+                    <p class="text-justify">{{ animal.description }}</p>
+                    <b-button class="btn-sm" :href="animal.linkWiki" target="_blank">Wiki</b-button>
+                </b-card>
+            </div>
+        </div>
     </div>
 </template>
 

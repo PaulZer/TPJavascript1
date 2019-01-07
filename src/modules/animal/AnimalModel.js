@@ -21,6 +21,12 @@ const AnimalModel = new Schema({
         empty: false,
         trim: true
     },
+    image: {
+        type: String,
+        required: true,
+        empty: false,
+        trim: true
+    },
     preys: [{
         type: Schema.Types.ObjectId,
         ref: 'Animal'

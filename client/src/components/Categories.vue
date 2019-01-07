@@ -1,11 +1,13 @@
 <template>
-    <ul>
-        <li v-for="category in categories" :key="category._id">
-            <router-link :to="{ name: 'category', params: { id: category._id }}">
-                <a>{{ category.name }}</a>
-            </router-link>
-        </li>
-    </ul>
+    <div class="container">
+        <b-list-group>
+            <b-list-group-item v-for="category in categories" :key="category._id">
+                <router-link :to="{ name: 'category', params: { id: category._id }}">
+                    <a>{{ category.name }}</a>
+                </router-link>
+            </b-list-group-item>
+        </b-list-group>
+    </div>
 </template>
 
 <script>
